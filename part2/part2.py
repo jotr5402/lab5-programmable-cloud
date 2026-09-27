@@ -74,13 +74,13 @@ def main():
     exit(1)
 
   # Create snapshot
-  # snapshot = create_snapshot(project, instance_name, instance_name)
-  snapshot_client = compute_v1.SnapshotsClient()
-  snapshot_name = f"base-snapshot-{instance_name}"
-  snapshot = snapshot_client.get(
-    project = project,
-    snapshot = snapshot_name
-  )
+  snapshot = create_snapshot(project, instance_name, instance_name)
+  # snapshot_client = compute_v1.SnapshotsClient()
+  # snapshot_name = f"base-snapshot-{instance_name}"
+  # snapshot = snapshot_client.get(
+  #   project = project,
+  #   snapshot = snapshot_name
+  # )
 
   # Create 3 instances from snapshot
   disk_params = compute_v1.AttachedDiskInitializeParams(
